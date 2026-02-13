@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비전임교원 현황 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+<main class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-category">교육원</span>
+            <h1>비전임교원(현황)</h1>
+            <p>겸임·초빙 교수 등 비전임교원의 역할과 운영 정책을 소개합니다.</p>
+        </div>
+    </section>
+    <section class="page-body">
+        <div class="container">
+        <article class="info-block">
+            <h2>비전임교원 운영</h2>
+            <p class="lead">현업 전문가를 비전임교원으로 초빙하여 교육의 실무 연계성을 강화합니다.</p>
+            <p>겸임·초빙 교수는 전공 심화 강의와 프로젝트 지도를 담당하며, 정기 평가와 성과 공유를 통해 품질을 관리합니다.</p>
+            <ul class="info-list">
+                <li>겸임·초빙 교수 80명 활동</li>
+                <li>산업체 프로젝트 지도 비율 45%</li>
+                <li>정기 역량 평가 및 재위촉 제도</li>
+            </ul>
+        </article>
+        <aside class="info-aside">
+            <h3>채용문의</h3>
+            <p class="info-aside__lead">비전임교원은 계약 기간 동안 학사 운영 규정을 준수합니다.</p>
+            <ul class="contact-list">
+                <li>전화<span>010-5909-9320</span></li>
+                <li>이메일<span>yjisc@naver.com</span></li>
+            </ul>
+            <a class="btn ghost" href="industry-collaboration.html">채용 현황</a>
+        </aside>
+        </div>
+    </section>
+<section class="page-detail">
+    <div class="container">
+        <h2>관리 체계</h2>
+        <div class="detail-grid">
+            <section class="detail-card">
+                <h3>선발 및 위촉</h3>
+                <ul>
+                    <li>산업 경력 5년 이상 전문가 우선 선발</li>
+                    <li>교과 적합성 심사 및 시범 강의 평가</li>
+                    <li>계약 기간 1~2년, 성과에 따라 재위촉</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>활동 지원</h3>
+                <ul>
+                    <li>정기 워크숍 및 커리큘럼 회의</li>
+                    <li>학생 상담 및 멘토링 프로그램 참여</li>
+                    <li>성과 공유회 및 우수 사례 포상</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>평가 및 피드백</h3>
+                <ul>
+                    <li>학기별 강의평가 및 학생 만족도 분석</li>
+                    <li>산학협력단과의 공동 프로젝트 평가</li>
+                    <li>전문성 향상을 위한 맞춤형 컨설팅</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+</main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* =========================================
+   1. Base Navigation Styles (Refined)
+   ========================================= */
+
+/* Main Nav Underline Animation */
+
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    width: 100%;
+    height: 3px;
+    background: var(--blue-500, #3b82f6);
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after {
+    transform: scaleX(1);
+}
+
+.main-nav li.has-mega>a::after {
+    display: none;
+}
+
+/* Mega Menu Hover Spacing */
+.has-mega::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 1.25rem;
+    pointer-events: none;
+}
+
+/* Mega Menu Logic (State & Positioning) */
+/* Note: Visual styles moved to Tailwind in header.html */
+/* We keep specific positioning and JS-toggled state logic here */
+
+.has-mega.is-open .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+/* Google Translate Widget Customization */
+.google-translate .goog-te-gadget {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: inherit;
+}
+
+.google-translate .goog-te-gadget>span {
+    margin: 0;
+}
+
+.google-translate .goog-te-combo {
+    border-radius: 999px;
+    padding: 0.5rem 1.4rem;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+}
+
+.google-translate .goog-te-gadget img {
+    display: none;
+}
+
+/* Helper for Mega Menu Columns (keep if dynamic cols are used) */
+.mega-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.75rem 2.25rem;
+    align-items: start;
+    justify-content: center;
+}

@@ -1,0 +1,23 @@
+/* =========================================
+   Base Theme Variables & Globals
+   ========================================= */
+
+/* 1. Light Mode Variables */
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #0f172a;
+    /* Slate-900 */
+    --text-secondary: #475569;
+    /* Slate-600 */
+    --bg-header: #ffffff;
+    --bg-footer: #f1f5f9;
+}
+
+/* 2. Dark Mode Variables */
+
+
+/* 3. Global Reset / Base Overrides */
+/* Body styles moved to Tailwind utilities on the body tag in index.html */
+
+/* General Button Text Color Override (Safety Net) */
+/* Rely on Tailwind classes like text-white on buttons/links */

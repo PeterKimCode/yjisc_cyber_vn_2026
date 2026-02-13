@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전공안내 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main class="content-page">
+        <!-- Page Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <span class="badge">Academic Programs</span>
+                    <h1>미래 산업을 선도할 전공을 소개합니다</h1>
+                    <p>
+                        GTCC 사이버 캠퍼스는 산업 수요를 반영한 다양한 학부와 전공을 운영하며, 실무형 인재 양성을 목표로 합니다.
+                        최신 트렌드를 반영한 커리큘럼으로 성장의 기회를 만나보세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments Grid -->
+        <section id="departments" class="section">
+            <div class="container">
+                <div class="program-grid lg:grid-cols-4">
+                    <article class="program-card reveal active">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold mb-3">초.중.고</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">국제학교의 초.중.고등학교 과정으로 글로벌 스탠다드 교육을
+                                제공합니다.</p>
+                            <a href="http://myyoungji.com"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 group">
+                                <span>세부 전공 보기</span>
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="program-card reveal active">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold mb-3">대학.대학원</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">학사, 석사, 박사 학위 및 석박사 통합 과정을 운영합니다.</p>
+                            <a href="http://gtcc.edu.ph"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 group">
+                                <span>세부 전공 보기</span>
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="program-card reveal active">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold mb-3">평생교육원</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">학점 취득 및 국가/민간 자격증 취득을 위한 실무 중심 과정입니다.
+                            </p>
+                            <a href="http://gtcc.edu.ph"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 group">
+                                <span>세부 전공 보기</span>
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="program-card reveal active">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold mb-3">통합대체의학</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">GTCC만의 특성화된 통합대체의학 대학원 전문 과정입니다.</p>
+                            <a href="http://gtcc.edu.ph"
+                                class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800 group">
+                                <span>세부 전공 보기</span>
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" style="background-color: var(--bg);">
+            <div class="container split">
+                <div class="reveal active">
+                    <h2 class="text-3xl font-bold mb-6">GTCC 만이 가지고 있는<br><span class="text-blue-600">특별한 교육시스템</span>
+                    </h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        GTCC Cyber College는 최단기 학위취득 과정과 합리적인 학비를 목표로 최상의 교육 품질을 제공합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>초.중.고.대학.대학원 전과정 100% 온라인 교육</li>
+                        <li>민간자격, 국제민간자격과 학위를 동시에 취득</li>
+                        <li>관련 해외대학 및 단체와의 공조로 국제적인 활동 추진</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-card reveal active"
+                    style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border: none; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;">
+                    <div class="stat" style="margin-bottom: 1.5rem;">
+                        <span class="number" style="color: white; font-size: 4.5rem; line-height: 1;">60+</span>
+                        <span class="label"
+                            style="color: rgba(255,255,255,0.7); font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600; display: block; margin-top: 0.5rem;">INTERNATIONAL
+                            CERTIFICATIONS</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.9); font-weight: 300; font-size: 1.1rem; line-height: 1.6;">
+                        국제적으로 인정받을 수 있는<br>다양한 국제 민간 자격을 취득할 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

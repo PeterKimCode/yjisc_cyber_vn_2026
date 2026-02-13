@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전임교직원 정보 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+<main class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-category">교육원</span>
+            <h1>전임교직원 정보</h1>
+            <p>전임 교수진과 직원의 역할, 연구 분야, 지원 체계를 소개합니다.</p>
+        </div>
+    </section>
+    <section class="page-body">
+        <div class="container">
+        <article class="info-block">
+            <h2>전문 교수진</h2>
+            <p class="lead">실무와 연구를 겸비한 교수진이 교육과 연구를 이끌고 있습니다.</p>
+            <p>전임 교수진은 AI, 경영, 휴먼서비스, 문화예술 등 다양한 분야에서 학문적 전문성과 실무 경험을 갖추고 있습니다.</p>
+            <ul class="info-list">
+                <li>전임 교수진 평균 경력 5년</li>
+                <li>산업체 경력 보유 교수 비율 68%</li>
+                <li>교수 1인당 연간 지도 학생 수 45명</li>
+            </ul>
+        </article>
+        <aside class="info-aside">
+            <h3>교원 채용</h3>
+            <p class="info-aside__lead">교원 채용 정보와 인사 제도는 인사팀에서 안내합니다.</p>
+            <ul class="contact-list">
+                <li>전화<span>010-5909-9320</span></li>
+                <li>이메일<span>yjisc@naver.com</span></li>
+            </ul>
+            <a class="btn primary" href="news.html">교원 채용 공고</a>
+            <a class="btn ghost" href="press.html">연구성과 보기</a>
+        </aside>
+        </div>
+    </section>
+<section class="page-detail">
+    <div class="container">
+        <h2>전임교수 운영</h2>
+        <div class="detail-grid">
+            <section class="detail-card">
+                <h3>교육 역량 강화</h3>
+                <ul>
+                    <li>교수법 워크숍 및 동료 평가</li>
+                    <li>온라인 수업 품질 진단 및 피드백</li>
+                    <li>캡스톤 프로젝트 지도 매뉴얼 제공</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>연구 지원</h3>
+                <ul>
+                    <li>연구비 지원 및 국제 학술대회 참가 지원</li>
+                    <li>산학협력 프로젝트 공동 연구</li>
+                    <li>교수 연구실 개방 및 학생 연구 참여 확대</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>복지 제도</h3>
+                <ul>
+                    <li>맞춤형 연수 및 연구년 제도 운영</li>
+                    <li>가족 친화적 복지 프로그램 제공</li>
+                    <li>건강검진, 심리 상담 등 복지 서비스</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>전임교수진</h3>
+                <ul>
+                    <li><a href="https://open.kakao.com/o/sBdzLw6e">전임교수 리스트</a></li>
+                  </ul>
+            </section>
+        </div>
+    </div>
+</section>
+</main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

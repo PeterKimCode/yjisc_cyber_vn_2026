@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GTCC Cyber Campus</title>
+    <meta name="description" content="GTCC 사이버 캠퍼스 - 시간과 장소의 제약 없는 글로벌 미래 교육 플랫폼">
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+
+    <div data-include="assets/partials/header.html"></div>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section
+            class="hero-slider relative h-[60vh] min-h-[500px] max-h-[700px] overflow-hidden w-full flex items-center justify-center bg-transparent transition-colors duration-300"
+            role="region" aria-label="주요 안내 배너" data-hero-slider data-hero-interval="8000">
+            <!-- Abstract background elements -->
+            <div
+                class="hero-bg-image absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center transition-opacity">
+            </div>
+            <!-- Subdued overlay for text readability -->
+            <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+
+            <div class="hero-slider__track relative w-full h-full container mx-auto px-4 z-10" data-hero-track>
+                <!-- Slides will be positioned absolutely by CSS/JS interactions, 
+                     but we style the content with Tailwind -->
+
+                <article id="hero-slide-1"
+                    class="hero-slide is-active absolute inset-0 flex flex-col justify-center items-start pt-20"
+                    data-hero-slide>
+                    <div class="max-w-3xl space-y-6 z-10 pl-4 md:pl-10">
+                        <span
+                            class="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-sm font-semibold tracking-wide backdrop-blur-sm animate-fade-in-up">Smart
+                            Learning Platform</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-md">
+                            시간과 장소의 제약 없는<br>
+                            <span class="text-white">미래형 대학 GTCC</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-white max-w-2xl leading-relaxed font-semibold drop-shadow-sm">
+                            GTCC 사이버 캠퍼스는 일과 학습의 균형을 돕는 유연한 온라인 교육 환경을 제공합니다.
+                            언제 어디서나 수준 높은 강의를 수강하고, 글로벌 인재로 도약하세요.
+                        </p>
+                        <div class="flex gap-4 pt-4">
+                            <a href="admissions.html"
+                                class="px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-600/30 transition-all hover:scale-105">입학
+                                신청하기</a>
+                            <a href="#programs"
+                                class="px-8 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-semibold transition-all hover:scale-105">학과
+                                둘러보기</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="hero-slide-2"
+                    class="hero-slide absolute inset-0 flex flex-col justify-center items-start pt-20 hidden"
+                    data-hero-slide>
+                    <div class="max-w-3xl space-y-6 z-10 pl-4 md:pl-10">
+                        <span
+                            class="inline-block px-4 py-1.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-sm font-semibold tracking-wide backdrop-blur-sm">AI
+                            · Data Science</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-md">
+                            산업 현장과 함께하는<br>
+                            <span class="text-white">데이터 사이언스 교육</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-white max-w-2xl leading-relaxed font-semibold drop-shadow-sm">
+                            캡스톤 프로젝트와 기업 협업 과정을 통해 실무에서 바로 활용 가능한 AI 역량을 키웁니다.
+                            최신 트렌드를 반영한 온라인 커리큘럼을 경험해 보세요.
+                        </p>
+                        <div class="flex gap-4 pt-4">
+                            <a href="programs.html"
+                                class="px-8 py-3.5 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-semibold shadow-lg shadow-teal-600/30 transition-all hover:scale-105">과정
+                                보기</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="hero-slide-3"
+                    class="hero-slide absolute inset-0 flex flex-col justify-center items-start pt-20 hidden"
+                    data-hero-slide>
+                    <div class="max-w-3xl space-y-6 z-10 pl-4 md:pl-10">
+                        <span
+                            class="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-sm font-semibold tracking-wide backdrop-blur-sm">Global
+                            Collaboration</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-md">
+                            세계와 연결되는<br>
+                            <span class="text-white">글로벌 융합 교육</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-white max-w-2xl leading-relaxed font-semibold drop-shadow-sm">
+                            GTCC 대학은 세계 각국의 파트너 대학과 온라인 공동 수업을 운영하며,
+                            상호 학점 인정 등 글로벌 프로젝트를 통해 실전 협업 능력을 강화합니다.
+                        </p>
+                    </div>
+                </article>
+
+                <article id="hero-slide-4"
+                    class="hero-slide absolute inset-0 flex flex-col justify-center items-start pt-20 hidden"
+                    data-hero-slide>
+                    <div class="max-w-3xl space-y-6 z-10 pl-4 md:pl-10">
+                        <span
+                            class="inline-block px-4 py-1.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 text-sm font-semibold tracking-wide backdrop-blur-sm">Scholarship
+                            & Support</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-md">
+                            학업에만 집중하세요<br>
+                            <span class="text-white">탄탄한 장학 지원</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-white max-w-2xl leading-relaxed font-semibold drop-shadow-sm">
+                            성적우수·재직자·신입생 장학 등 상황에 맞춘 다양한 장학 혜택과 맞춤형 학습 코칭을 제공합니다.
+                        </p>
+                    </div>
+                </article>
+
+                <article id="hero-slide-5"
+                    class="hero-slide absolute inset-0 flex flex-col justify-center items-start pt-20 hidden"
+                    data-hero-slide>
+                    <div class="max-w-3xl space-y-6 z-10 pl-4 md:pl-10">
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-md">
+                            함께 성장하는<br>
+                            <span class="text-white">학습 공동체</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-white max-w-2xl leading-relaxed font-semibold drop-shadow-sm">
+                            지역 스터디 모임과 온라인 동아리, 멘토링 플랫폼을 통해 서로 배우고 성장하는 커뮤니티를 만들어갑니다.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Slider Controls (Separated) -->
+            <!-- Dots (Bottom Center) -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-30" data-hero-dots>
+                <button type="button"
+                    class="w-2.5 h-2.5 rounded-full bg-black/30 hover:bg-black/50 border border-white/30 transition-all data-[active=true]:bg-blue-500 data-[active=true]:border-blue-500 data-[active=true]:w-8 backdrop-blur-sm"
+                    data-hero-dot="0"></button>
+                <button type="button"
+                    class="w-2.5 h-2.5 rounded-full bg-black/30 hover:bg-black/50 border border-white/30 transition-all data-[active=true]:bg-blue-500 data-[active=true]:border-blue-500 data-[active=true]:w-8 backdrop-blur-sm"
+                    data-hero-dot="1"></button>
+                <button type="button"
+                    class="w-2.5 h-2.5 rounded-full bg-black/30 hover:bg-black/50 border border-white/30 transition-all data-[active=true]:bg-blue-500 data-[active=true]:border-blue-500 data-[active=true]:w-8 backdrop-blur-sm"
+                    data-hero-dot="2"></button>
+                <button type="button"
+                    class="w-2.5 h-2.5 rounded-full bg-black/30 hover:bg-black/50 border border-white/30 transition-all data-[active=true]:bg-blue-500 data-[active=true]:border-blue-500 data-[active=true]:w-8 backdrop-blur-sm"
+                    data-hero-dot="3"></button>
+                <button type="button"
+                    class="w-2.5 h-2.5 rounded-full bg-black/30 hover:bg-black/50 border border-white/30 transition-all data-[active=true]:bg-blue-500 data-[active=true]:border-blue-500 data-[active=true]:w-8 backdrop-blur-sm"
+                    data-hero-dot="4"></button>
+            </div>
+
+            <!-- Prev Button (Left Center) -->
+            <button type="button"
+                class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-slate-300 bg-white/20 hover:bg-white/40 text-slate-900 flex items-center justify-center backdrop-blur-md transition-all z-30"
+                data-hero-prev aria-label="이전 배너">
+                <svg class="w-6 h-6 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Next Button (Right Center) -->
+            <button type="button"
+                class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-slate-300 bg-white/20 hover:bg-white/40 text-slate-900 flex items-center justify-center backdrop-blur-md transition-all z-30"
+                data-hero-next aria-label="다음 배너">
+                <svg class="w-6 h-6 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                    </path>
+                </svg>
+            </button>
+        </section>
+
+        <!-- Quick Links (Bento Grid) -->
+        <section class="py-12 -mt-20 relative z-20" aria-label="바로가기">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <a href="admissions.html"
+                        class="bento-card p-6 flex flex-col gap-4 group bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-500/50 transition-all">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🎓</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                입학전형 안내
+                            </h3>
+                            <p class="text-sm text-slate-600 mt-1">전형별 일정과 제출 서류 안내</p>
+                        </div>
+                    </a>
+                    <a href="scholarship-benefits.html"
+                        class="bento-card p-6 flex flex-col gap-4 group bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-500/50 transition-all">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">💼</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                                장학제도
+                            </h3>
+                            <p class="text-sm text-slate-600 mt-1">다양한 장학 혜택 확인</p>
+                        </div>
+                    </a>
+                    <a href="lifelong-international-국제디플로마과정.html"
+                        class="bento-card p-6 flex flex-col gap-4 group bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-xl hover:border-purple-500/50 transition-all">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🌐</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-600 transition-colors">
+                                국제교류
+                            </h3>
+                            <p class="text-sm text-slate-600 mt-1">해외 대학 공동 프로그램</p>
+                        </div>
+                    </a>
+                    <a href="academic-notices.html"
+                        class="bento-card p-6 flex flex-col gap-4 group bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-500/50 transition-all">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">📢</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
+                                공지사항
+                            </h3>
+                            <p class="text-sm text-slate-600 mt-1">학사일정 및 주요 안내</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 reveal bg-white transition-colors duration-300">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h2 class="text-3xl md:text-5xl font-bold text-slate-900">GTCC 사이버 캠퍼스</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed">
+                                첨단 디지털 학습 환경을 기반으로 누구나 꿈을 이룰 수 있도록 설계된 온라인 대학입니다.
+                                24시간 언제든지 수강 가능한 강의와 실습, 체계적인 학사 관리 시스템을 통해 학습자 중심의 교육을 제공합니다.
+                            </p>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-slate-700">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                실무 중심의 커리큘럼과 프로젝트 학습
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                전문 교수진과의 밀착형 멘토링
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                차별화된 온·오프라인 연계 프로그램
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                만학도를 위한 특별 단기학습 프로그램
+                            </li>
+                        </ul>
+                        <a href="about.html"
+                            class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-500 transition-colors">
+                            자세히 알아보기
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="relative group" data-about-slider data-about-interval="5000">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity">
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl aspect-video bento-card border-none"
+                            data-about-track>
+                            <!-- Simple Image Swap handled by existing JS logic via IDs -->
+                            <figure id="about-slide-1"
+                                class="about-slide is-active absolute inset-0 transition-opacity duration-700 w-full h-full [&:not(.is-active)]:opacity-0 [&:not(.is-active)]:pointer-events-none"
+                                data-about-slide>
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80"
+                                    alt="Students" class="w-full h-full object-cover" />
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md p-6 border-t border-white/10">
+                                    <figcaption class="text-white text-base font-semibold drop-shadow-md">실시간 토론과 협업 도구를
+                                        활용해 학습자가 중심이 되는
+                                        온라인 강의 환경
+                                    </figcaption>
+                                </div>
+                            </figure>
+                            <figure id="about-slide-2"
+                                class="about-slide absolute inset-0 transition-opacity duration-700 w-full h-full [&:not(.is-active)]:opacity-0 [&:not(.is-active)]:pointer-events-none"
+                                data-about-slide>
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&q=80"
+                                    alt="Digital Learning" class="w-full h-full object-cover" />
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md p-6 border-t border-white/10">
+                                    <figcaption class="text-white text-base font-semibold drop-shadow-md">언제 어디서나 학습 자료에
+                                        접근할 수 있는 맞춤형 학습
+                                        지원 시스템
+                                    </figcaption>
+                                </div>
+                            </figure>
+                            <figure id="about-slide-3"
+                                class="about-slide absolute inset-0 transition-opacity duration-700 w-full h-full [&:not(.is-active)]:opacity-0 [&:not(.is-active)]:pointer-events-none"
+                                data-about-slide>
+                                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1600&q=80"
+                                    alt="Global Network" class="w-full h-full object-cover" />
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md p-6 border-t border-white/10">
+                                    <figcaption class="text-white text-base font-semibold drop-shadow-md">세계 각국의 대학과 연계한
+                                        글로벌 네트워크 프로그램
+                                    </figcaption>
+                                </div>
+                            </figure>
+                            <figure id="about-slide-4"
+                                class="about-slide absolute inset-0 transition-opacity duration-700 w-full h-full [&:not(.is-active)]:opacity-0 [&:not(.is-active)]:pointer-events-none"
+                                data-about-slide>
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
+                                    alt="Teamwork" class="w-full h-full object-cover" />
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md p-6 border-t border-white/10">
+                                    <figcaption class="text-white text-base font-semibold drop-shadow-md">다양한 전공 분야의
+                                        학생들과 함께하는 프로젝트 협업
+                                    </figcaption>
+                                </div>
+                            </figure>
+                            <figure id="about-slide-5"
+                                class="about-slide absolute inset-0 transition-opacity duration-700 w-full h-full [&:not(.is-active)]:opacity-0 [&:not(.is-active)]:pointer-events-none"
+                                data-about-slide>
+                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80"
+                                    alt="Conference" class="w-full h-full object-cover" />
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md p-6 border-t border-white/10">
+                                    <figcaption class="text-white text-base font-semibold drop-shadow-md">산업체 전문가와 함께하는
+                                        실무 중심 세미나
+                                    </figcaption>
+                                </div>
+                            </figure>
+                            <figure id="about-slide-6"
+                                class="about-slide absolute inset-0 transition-opacity duration-700 w-full h-full [&:not(.is-active)]:opacity-0 [&:not(.is-active)]:pointer-events-none"
+                                data-about-slide>
+                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=80"
+                                    alt="Graduation" class="w-full h-full object-cover" />
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md p-6 border-t border-white/10">
+                                    <figcaption class="text-white text-base font-semibold drop-shadow-md">꿈을 향해 나아가는
+                                        졸업생들의 성공적인 미래
+                                    </figcaption>
+                                </div>
+                            </figure>
+                        </div>
+
+                        <!-- Pagination Dots (Bottom Center) -->
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-[60] pointer-events-auto"
+                            data-about-dots>
+                            <button type="button"
+                                class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                data-about-dot="0"></button>
+                            <button type="button"
+                                class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                data-about-dot="1"></button>
+                            <button type="button"
+                                class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                data-about-dot="2"></button>
+                            <button type="button"
+                                class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                data-about-dot="3"></button>
+                            <button type="button"
+                                class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                data-about-dot="4"></button>
+                            <button type="button"
+                                class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                data-about-dot="5"></button>
+                        </div>
+
+                        <!-- Prev Button (Left Center) -->
+                        <button type="button"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/30 hover:bg-black/50 text-white rounded-full cursor-pointer transition-colors backdrop-blur-sm z-[60] pointer-events-auto"
+                            data-about-prev aria-label="이전">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <!-- Next Button (Right Center) -->
+                        <button type="button"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/30 hover:bg-black/50 text-white rounded-full cursor-pointer transition-colors backdrop-blur-sm z-[60] pointer-events-auto"
+                            data-about-next aria-label="다음">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section (Bento Grid) -->
+        <section id="programs" class="py-20 bg-slate-50 transition-colors duration-300 reveal">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <span
+                            class="text-blue-500 font-semibold tracking-wide uppercase text-sm mb-2 block">Departments</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-slate-900">전공 분야</h2>
+                    </div>
+                    <a href="programs.html"
+                        class="text-slate-500 hover:text-blue-600 transition-colors text-sm flex items-center gap-1">전체
+                        과정
+                        보기 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg></a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <article
+                        class="bento-card p-8 group hover:bg-blue-600/10 transition-colors bg-white/80 backdrop-blur-md border border-slate-200">
+                        <div
+                            class="mb-6 w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🏫</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">초.중.고 과정</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">국제학교의 초.중.고등학교 과정으로
+                            글로벌 스탠다드 교육을 제공합니다.
+                        </p>
+                        <a href="http://gtcc.edu.ph" class="text-blue-600 text-sm font-semibold hover:text-blue-500">세부
+                            전공 보기 &rarr;</a>
+                    </article>
+
+                    <article
+                        class="bento-card p-8 group hover:bg-purple-600/10 transition-colors bg-white/80 backdrop-blur-md border border-slate-200">
+                        <div
+                            class="mb-6 w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🎓</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">대학.대학원</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">학사, 석사, 박사 학위 및 석박사
+                            통합 과정을 운영합니다.</p>
+                        <a href="http://gtcc.edu.ph"
+                            class="text-purple-600 text-sm font-semibold hover:text-purple-500">세부
+                            전공 보기 &rarr;</a>
+                    </article>
+
+                    <article
+                        class="bento-card p-8 group hover:bg-emerald-600/10 transition-colors bg-white/80 backdrop-blur-md border border-slate-200">
+                        <div
+                            class="mb-6 w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🌱</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">평생교육원</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">학점 취득 및 국가/민간 자격증 취득을
+                            위한 실무 중심 과정입니다.</p>
+                        <a href="http://gtcc.edu.ph"
+                            class="text-emerald-600 text-sm font-semibold hover:text-emerald-500">세부
+                            전공 보기 &rarr;</a>
+                    </article>
+
+                    <article
+                        class="bento-card p-8 group hover:bg-rose-600/10 transition-colors bg-white/80 backdrop-blur-md border border-slate-200">
+                        <div
+                            class="mb-6 w-14 h-14 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-600 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">⚕️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">통합대체의학</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">GTCC만의 특성화된 통합대체의학
+                            대학원 전문 과정입니다.</p>
+                        <a href="http://gtcc.edu.ph" class="text-rose-600 text-sm font-semibold hover:text-rose-500">세부
+                            전공 보기 &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Admissions (Mixed Grid) -->
+        <section class="py-20 reveal">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Admissions Main -->
+                    <div
+                        class="lg:col-span-2 bento-card p-8 md:p-12 relative overflow-hidden bg-white/80 backdrop-blur-md border border-slate-200 shadow-xl shadow-blue-500/5">
+                        <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+                            <svg class="w-64 h-64 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                            </svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-bold text-slate-900 mb-4">2026학년도 신입학/편입학 안내</h2>
+                            <p class="text-slate-600 mb-8 max-w-lg">원서 접수부터 합격자 발표까지, 입학에 필요한 모든 일정을
+                                확인하세요. 새로운 시작을
+                                GTCC가 응원합니다.</p>
+
+                            <div class="grid sm:grid-cols-3 gap-6 mb-8 text-center sm:text-left">
+                                <div class="bg-slate-100 rounded-xl p-4 border border-slate-200">
+                                    <div class="text-sm text-slate-600 mb-1">원서 접수</div>
+                                    <div class="text-lg font-bold text-slate-900">12.01 ~ 12.31</div>
+                                </div>
+                                <div class="bg-slate-100 rounded-xl p-4 border border-slate-200">
+                                    <div class="text-sm text-slate-600 mb-1">면접 전형</div>
+                                    <div class="text-lg font-bold text-slate-900">01.10 ~ 01.15</div>
+                                </div>
+                                <div class="bg-slate-100 rounded-xl p-4 border border-slate-200">
+                                    <div class="text-sm text-slate-600 mb-1">합격 발표</div>
+                                    <div class="text-lg font-bold text-blue-600">01.25</div>
+                                </div>
+                            </div>
+
+                            <a href="admissions.html"
+                                class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors w-full sm:w-auto">입학처
+                                바로가기</a>
+                        </div>
+                    </div>
+
+                    <!-- News Feed -->
+                    <div class="bento-card p-8 bg-white/80 backdrop-blur-md border border-slate-200">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-slate-900">새소식</h3>
+                            <a href="news.html"
+                                class="text-xs text-slate-500 hover:text-blue-600 uppercase tracking-wider transition-colors">View
+                                All</a>
+                        </div>
+                        <div class="space-y-6">
+                            <article class="group cursor-pointer">
+                                <div class="flex gap-3 text-xs mb-1">
+                                    <span class="text-blue-600 font-bold bg-blue-400/10 px-2 py-0.5 rounded">공지</span>
+                                    <time class="text-slate-500">2025.10.09</time>
+                                </div>
+                                <h4
+                                    class="text-slate-800 font-medium group-hover:text-blue-600 transition-colors line-clamp-1">
+                                    GTCC 학습관 모집 (교수자격 보유자)</h4>
+                            </article>
+
+                            <article class="group cursor-pointer">
+                                <div class="flex gap-3 text-xs mb-1">
+                                    <span
+                                        class="text-purple-600 font-bold bg-purple-400/10 px-2 py-0.5 rounded">행사</span>
+                                    <time class="text-slate-500">2025.10.05</time>
+                                </div>
+                                <h4
+                                    class="text-slate-800 font-medium group-hover:text-purple-600 transition-colors line-clamp-1">
+                                    메타버스 진로 박람회 개최 안내</h4>
+                            </article>
+
+                            <article class="group cursor-pointer">
+                                <div class="flex gap-3 text-xs mb-1">
+                                    <span
+                                        class="text-emerald-600 font-bold bg-emerald-400/10 px-2 py-0.5 rounded">채용</span>
+                                    <time class="text-slate-500">2025.10.01</time>
+                                </div>
+                                <h4
+                                    class="text-slate-800 font-medium group-hover:text-emerald-600 transition-colors line-clamp-1">
+                                    GTCC 사이버대학 신임 교수 초빙</h4>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video & Support -->
+        <section id="support" class="py-20 bg-white reveal pb-32 transition-colors duration-300">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-6">학생 지원 서비스</h2>
+                        <p class="text-slate-600 mb-8 max-w-md">졸업이 끝이 아닙니다. 재학생과 동문을 위한 맞춤형 커리어 코칭과
+                            평생 학습 네트워크를 지원합니다.
+                        </p>
+
+                        <div class="grid gap-4">
+                            <div class="bento-card p-5 flex gap-4 items-start bg-slate-50 border border-slate-200">
+                                <div class="mt-1 text-blue-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 font-bold text-lg">학습 코칭</h4>
+                                    <p class="text-sm text-slate-600 mt-1">전문 학습 코치가 성향을 분석하여 개인 맞춤형
+                                        학습 계획을 설계해 드립니다.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bento-card p-5 flex gap-4 items-start bg-slate-50 border border-slate-200">
+                                <div class="mt-1 text-purple-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 font-bold text-lg">커리어 센터</h4>
+                                    <p class="text-sm text-slate-600 mt-1">이력서 컨설팅부터 모의 면접까지, 성공적인
+                                        취업을 위한 실전 가이드를 제공합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/5 bg-slate-800">
+                        <!-- Uses existing JS logic for slider if needed, but for now simplified to one video for modern layout 
+                              or re-using the data-video-slider structure if preservation is critical.
+                              The user asked to keep functional structure, so I will preserve the complex markup structure for the video slider 
+                              but wrap it in Tailwind classes. -->
+                        <div class="video-slider relative w-full h-full aspect-video bg-black rounded-lg overflow-hidden group"
+                            data-video-slider data-video-interval="8000">
+                            <div class="video-slider__track relative w-full h-full" data-video-track>
+                                <!-- Slide 1 -->
+                                <div id="campus-video-slide-1"
+                                    class="video-slider__slide absolute inset-0 w-full h-full opacity-0 invisible transition-all duration-500 [&.is-active]:opacity-100 [&.is-active]:visible [&.is-active]:z-10 is-active"
+                                    data-video-slide>
+                                    <iframe class="w-full h-full"
+                                        src="https://www.youtube.com/embed/2ggHiiRfnIE?si=ueRq8uqUdnZ-zMGL"
+                                        title="GTCC Intro"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div id="campus-video-slide-2"
+                                    class="video-slider__slide absolute inset-0 w-full h-full opacity-0 invisible transition-all duration-500 [&.is-active]:opacity-100 [&.is-active]:visible [&.is-active]:z-10"
+                                    data-video-slide>
+                                    <iframe class="w-full h-full"
+                                        src="https://www.youtube.com/embed/lxIsVpZ8fFw?si=example2"
+                                        title="Success Story"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div id="campus-video-slide-3"
+                                    class="video-slider__slide absolute inset-0 w-full h-full opacity-0 invisible transition-all duration-500 [&.is-active]:opacity-100 [&.is-active]:visible [&.is-active]:z-10"
+                                    data-video-slide>
+                                    <iframe class="w-full h-full"
+                                        src="https://www.youtube.com/embed/7X8II6J-6mU?si=example3" title="Campus Life"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <div
+                                class="absolute inset-0 pointer-events-none flex items-center justify-between px-4 z-20">
+                                <button type="button"
+                                    class="pointer-events-auto p-2 rounded-full bg-black/50 text-white hover:bg-blue-600 transition-colors"
+                                    data-video-prev aria-label="이전 영상">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                <button type="button"
+                                    class="pointer-events-auto p-2 rounded-full bg-black/50 text-white hover:bg-blue-600 transition-colors"
+                                    data-video-next aria-label="다음 영상">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Dots -->
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                <button type="button"
+                                    class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                    data-video-dot="0" aria-label="영상 1"></button>
+                                <button type="button"
+                                    class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                    data-video-dot="1" aria-label="영상 2"></button>
+                                <button type="button"
+                                    class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all data-[active=true]:bg-blue-500 data-[active=true]:w-6"
+                                    data-video-dot="2" aria-label="영상 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div data-include="assets/partials/footer.html"></div>
+
+    <button type="button"
+        class="fixed right-6 bottom-6 z-50 w-12 h-12 bg-blue-600 text-white rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-blue-500 hover:scale-110"
+        data-scroll-top aria-label="맨 위로">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M12 5.5a1 1 0 0 1 .7.3l6 6a1 1 0 0 1-1.4 1.4L12 7.91l-5.3 5.29a1 1 0 0 1-1.4-1.42l6-6a1 1 0 0 1 .7-.28Z" />
+        </svg>
+    </button>
+
+    <script src="assets/js/includes.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+        });
+    </script>
+</body>
+
+</html>

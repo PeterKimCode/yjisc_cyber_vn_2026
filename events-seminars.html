@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>행사 · 세미나 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <span class="badge">Events &amp; Seminars</span>
+                    <h1>지식과 네트워킹이 만나는 GTCC 행사</h1>
+                    <p>
+                        특강, 커리어 세미나, 네트워킹 이벤트 등 GTCC에서 열리는 주요 행사를 소개합니다.
+                        일정에 맞춰 사전 신청하고 현장의 열기를 느껴보세요.
+                    </p>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="floating-card">
+                        <strong>사전 등록</strong>
+                        <p>참가 신청은 선착순으로 마감됩니다.</p>
+                        <a href="https://open.kakao.com/o/pfJrLjVh">신청 절차 보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="upcoming">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>다가오는 행사</h2>
+                    <p>이번 학기에 놓치지 말아야 할 프로그램을 소개합니다.</p>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <span class="tag">세미나</span>
+                        <h3>AI 윤리와 미래 교육 포럼</h3>
+                        <time datetime="2025-03-15">2025.03.15</time>
+                        <p>국내외 전문가가 참여하는 패널 토크와 질의응답 세션.</p>
+                        <a class="link" href="https://open.kakao.com/o/pfJrLjVh">참가 신청</a>
+                    </article>
+                    <article class="news-card">
+                        <span class="tag">워크숍</span>
+                        <h3>디자인 씽킹 스프린트</h3>
+                        <time datetime="2025-04-02">2025.04.02</time>
+                        <p>팀 단위 문제 해결 워크숍으로 혁신 아이디어를 실습합니다.</p>
+                        <a class="link" href="https://open.kakao.com/o/pfJrLjVh">참가 신청</a>
+                    </article>
+                    <article class="news-card">
+                        <span class="tag">네트워킹</span>
+                        <h3>졸업생 커리어 나이트</h3>
+                        <time datetime="2025-04-18">2025.04.18</time>
+                        <p>졸업생 선배들과의 멘토링 및 채용 상담 부스 운영.</p>
+                        <a class="link" href="https://open.kakao.com/o/pfJrLjVh">참가 신청</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="highlights">
+            <div class="container split">
+                <div class="text">
+                    <h2>지난 행사 하이라이트</h2>
+                    <p>
+                        다양한 분야의 전문가와 재학생이 함께한 생생한 현장을 다시 만나보세요. 영상과 사진 자료를 통해
+                        발표 내용을 복습하고 인사이트를 공유합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>메타버스 진로 박람회: 2,000명 참여, 35개 기업 부스 운영</li>
+                        <li>글로벌 비즈니스 세미나: 해외 파트너 대학 공동 진행</li>
+                        <li>힐링 웰니스 리트릿: 오프라인 리트릿과 온라인 챌린지 병행</li>
+                    </ul>
+                </div>
+                <div class="highlight-card" role="img" aria-label="행사 하이라이트">
+                    <div class="stat">
+                        <span class="number">98%</span>
+                        <span class="label">참가자 만족도</span>
+                    </div>
+                    <p>행사 종료 후 만족도 조사에서 98%가 "다음에도 참여하고 싶다"고 응답했습니다.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="register">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>참가 신청 방법</h2>
+                    <p>사전 등록을 완료하면 행사 전날 알림 메시지를 받아볼 수 있습니다.</p>
+                </div>
+                <div class="support-cta events-register">
+                    <div class="cta-content">
+                        <span class="cta-eyebrow">GTCC 이벤트</span>
+                        <h3>사전 등록으로 생생한 현장을 놓치지 마세요</h3>
+                        <p>간편한 절차로 등록하고, 최신 행사 소식과 참가 가이드를 가장 먼저 받아보세요.</p>
+                        <ol class="feature-list">
+                            <li><strong>행사 선택:</strong> 참여를 원하는 프로그램을 선택합니다.</li>
+                            <li><strong>신청서 작성:</strong> 기본 정보와 관심 세션을 기입합니다.</li>
+                            <li><strong>확인 메일 수신:</strong> 등록 완료 후 이메일로 안내를 받습니다.</li>
+                        </ol>
+                    </div>
+                    <div class="cta-actions">
+                        <a class="btn primary" href="https://open.kakao.com/o/pfJrLjVh" target="_blank" rel="noopener">사전 등록하기</a>
+                        <a class="btn ghost" href="mailto:gtcccybercollege@gmail.com">문의 메일 보내기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

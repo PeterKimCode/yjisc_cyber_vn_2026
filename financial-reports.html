@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>교수소개 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+    <main class="content-page educator-page">
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-category">입학안내</span>
+                <h1>전임 교수진 소개</h1>
+                <p>미래 역량을 키우는 GTCC 사이버 캠퍼스의 핵심 교수진을 소개합니다. 학문적 전문성과 산업 경험을 갖춘 교수들이 학생들의 학습 여정을 함께합니다.</p>
+            </div>
+        </section>
+        <section class="page-body">
+            <div class="container">
+                <div class="educator-intro">
+                    <p class="lead">GTCC 교수진은 첨단 교육 콘텐츠 개발과 맞춤형 학습 코칭을 위해 협력하며, 각자의 전공 분야에서 축적된 연구 경험과 실무 노하우를 기반으로 수업을 설계합니다. 학생 중심 학습을 지향하며, 프로젝트 기반 수업과 AI 학습 분석을 활용한 피드백을 제공하고 있습니다.</p>
+                    <ul class="info-list">
+                        <li>AI 기반 학습 분석과 피드백 시스템 도입</li>
+                        <li>글로벌 산학협력 프로젝트와 공동 연구 수행</li>
+                        <li>학생 멘토링 및 커리어 코칭 프로그램 운영</li>
+                    </ul>
+                    <div class="educator-list" role="list">
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-01.svg" alt="assets/picture/우상용목사.jpg" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">AI융합학부 전임교수</p>
+                                    <h2 class="educator-card__name">박지현</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>설명 가능한 인공지능과 교육 데이터 분석</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>네오테크 연구소 수석연구원</dd>
+                                        <dd>교육부 AI 커리큘럼 자문위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>딥러닝 프로젝트 실습</dd>
+                                        <dd>데이터 윤리와 책임 있는 AI</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-02.svg" alt="최윤아 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">디지털비즈니스학부 전임교수</p>
+                                    <h2 class="educator-card__name">최윤아</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>디지털 전환 전략과 플랫폼 비즈니스</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>BCG 디지털이노베이션 책임컨설턴트</dd>
+                                        <dd>중소벤처기업부 디지털전환 자문위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>디지털 비즈니스 전략</dd>
+                                        <dd>스타트업 비즈니스 모델링</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-03.svg" alt="이도현 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">휴먼서비스학부 전임교수</p>
+                                    <h2 class="educator-card__name">이도현</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>상담심리와 디지털 정신건강 서비스</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>서울시 청년마음건강센터 센터장</dd>
+                                        <dd>한국상담심리학회 공인 수퍼바이저</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>상담실습과 슈퍼비전</dd>
+                                        <dd>디지털 시대의 마음건강 프로그램</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-04.svg" alt="김아름 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">글로벌교양학부 전임교수</p>
+                                    <h2 class="educator-card__name">김아름</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>세계시민교육과 다문화 커뮤니케이션</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>UNESCO 아시아태평양 교육위원회 연구원</dd>
+                                        <dd>국제개발 NGO 교육 프로그램 디렉터</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>글로벌 시민성과 지속가능발전</dd>
+                                        <dd>다문화 커뮤니케이션 전략</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-05.svg" alt="정해원 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">스마트헬스케어학부 전임교수</p>
+                                    <h2 class="educator-card__name">정해원</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>디지털 헬스 데이터와 원격의료 시스템</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>국가디지털헬스혁신센터 책임연구원</dd>
+                                        <dd>보건복지부 스마트의료 자문위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>원격의료 서비스 디자인</dd>
+                                        <dd>디지털 헬스 데이터 분석</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-06.svg" alt="서지후 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">문화콘텐츠학부 전임교수</p>
+                                    <h2 class="educator-card__name">서지후</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>스토리텔링과 인터랙티브 미디어</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>글로벌 게임사 내러티브 디렉터</dd>
+                                        <dd>한국콘텐츠진흥원 XR콘텐츠 심사위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>게임 스토리텔링 워크숍</dd>
+                                        <dd>인터랙티브 콘텐츠 제작</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-07.svg" alt="한세림 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">미래신학부 전임교수</p>
+                                    <h2 class="educator-card__name">한세림</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>디지털 시대의 목회 리더십</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>미국 듀크대학교 디비니티 스쿨 연구교수</dd>
+                                        <dd>온라인 선교 플랫폼 디렉터</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>디지털 목회 전략</dd>
+                                        <dd>선교 커뮤니케이션 실습</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-08.svg" alt="윤태경 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">사이버경영학부 전임교수</p>
+                                    <h2 class="educator-card__name">윤태경</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>핀테크 비즈니스 모델과 데이터 거버넌스</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>글로벌 결제 스타트업 COO</dd>
+                                        <dd>금융위원회 디지털금융 정책 자문</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>핀테크 서비스 전략</dd>
+                                        <dd>데이터 기반 경영의사결정</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-09.svg" alt="고민재 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">스마트파이낸스학부 전임교수</p>
+                                    <h2 class="educator-card__name">고민재</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>자산관리 로보어드바이저와 ESG 투자</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>국제금융센터 선임이코노미스트</dd>
+                                        <dd>ESG 투자자문사 파트너</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>글로벌 자산배분 전략</dd>
+                                        <dd>지속가능 투자분석</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-10.svg" alt="임유빈 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">데이터사이언스학부 전임교수</p>
+                                    <h2 class="educator-card__name">임유빈</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>빅데이터 시각화와 클라우드 분석</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>실리콘밸리 데이터플랫폼 스타트업 CTO</dd>
+                                        <dd>과기부 데이터댐 프로젝트 PM</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>클라우드 데이터 엔지니어링</dd>
+                                        <dd>데이터 시각화와 대시보드</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-11.svg" alt="배도윤 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">스마트제조학부 전임교수</p>
+                                    <h2 class="educator-card__name">배도윤</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>디지털 트윈과 지능형 공장 운영</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>삼성전자 스마트팩토리 TF 책임</dd>
+                                        <dd>산업부 스마트제조 혁신센터 자문위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>디지털 트윈 모델링</dd>
+                                        <dd>스마트팩토리 운영 전략</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-12.svg" alt="문소연 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">스마트교육학부 전임교수</p>
+                                    <h2 class="educator-card__name">문소연</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>에듀테크 기반 맞춤형 학습 설계</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>서울시 스마트교육지원센터장</dd>
+                                        <dd>OECD 교육혁신 자문그룹 멤버</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>에듀테크 솔루션 기획</dd>
+                                        <dd>학습경험 디자인</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-13.svg" alt="조민아 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">공공리더십학부 전임교수</p>
+                                    <h2 class="educator-card__name">조민아</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>스마트시티 거버넌스와 시민참여 정책</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>행정안전부 스마트시티 실증사업 PM</dd>
+                                        <dd>세계은행 도시정책 컨설턴트</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>스마트시티 정책과 전략</dd>
+                                        <dd>공공데이터 기반 정책평가</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-14.svg" alt="박하린 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">K-컬처경영학부 전임교수</p>
+                                    <h2 class="educator-card__name">박하린</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>글로벌 팬덤 비즈니스와 문화마케팅</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>글로벌 엔터테인먼트 기업 전략실장</dd>
+                                        <dd>K-컬처 산업진흥원 자문위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>글로벌 팬덤 전략</dd>
+                                        <dd>문화콘텐츠 마케팅</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-15.svg" alt="라윤성 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">국제개발협력학부 전임교수</p>
+                                    <h2 class="educator-card__name">라윤성</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>지속가능 개발과 글로벌 파트너십</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>KOICA 현장소장</dd>
+                                        <dd>UNDP 아시아태평양국 프로그램 매니저</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>국제개발 프로젝트 설계</dd>
+                                        <dd>인도주의 지원 전략</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-16.svg" alt="최세훈 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">ESG경영학부 전임교수</p>
+                                    <h2 class="educator-card__name">최세훈</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>지속가능 경영지표와 임팩트 측정</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>글로벌 컨설팅사 ESG 파트너</dd>
+                                        <dd>한국ESG포럼 운영위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>ESG 전략과 보고</dd>
+                                        <dd>임팩트 비즈니스 모델</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-17.svg" alt="홍리안 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">에듀테크전공 전임교수</p>
+                                    <h2 class="educator-card__name">홍리안</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>러닝애널리틱스와 학습자 경험 디자인</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>실리콘밸리 에듀테크 스타트업 UX리드</dd>
+                                        <dd>MIT 미디어랩 방문연구원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>러닝애널리틱스 실무</dd>
+                                        <dd>디지털 러닝경험 디자인</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-18.svg" alt="배현우 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">라이프디자인학부 전임교수</p>
+                                    <h2 class="educator-card__name">배현우</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>평생경력설계와 미래역량 개발</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>고용노동부 직업전환 컨설팅 총괄</dd>
+                                        <dd>평생교육진흥원 교육혁신위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>커리어 디자인 스튜디오</dd>
+                                        <dd>미래역량 진단과 설계</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-19.svg" alt="신유정 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">미디어커뮤니케이션학부 전임교수</p>
+                                    <h2 class="educator-card__name">신유정</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>데이터 저널리즘과 뉴미디어 스토리텔링</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>공영방송 디지털뉴스센터 에디터</dd>
+                                        <dd>국제저널리스트협회 서울지부 부대표</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>데이터 저널리즘 실습</dd>
+                                        <dd>멀티미디어 콘텐츠 제작</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                        <article class="educator-card" role="listitem">
+                            <figure class="educator-card__media">
+                                <img src="assets/picture/professors/professor-20.svg" alt="에이미 장 교수 사진" />
+                            </figure>
+                            <div class="educator-card__content">
+                                <header>
+                                    <p class="educator-card__role">글로벌어학학부 전임교수</p>
+                                    <h2 class="educator-card__name">에이미 장</h2>
+                                </header>
+                                <dl class="educator-card__meta">
+                                    <div>
+                                        <dt>연구 분야</dt>
+                                        <dd>AI 기반 언어학습과 다중언어 교육</dd>
+                                    </div>
+                                    <div>
+                                        <dt>주요 경력</dt>
+                                        <dd>캘리포니아주립대 TESOL 교수</dd>
+                                        <dd>국제영어교육학회 운영위원</dd>
+                                    </div>
+                                    <div>
+                                        <dt>담당 교과목</dt>
+                                        <dd>AI 튜터 활용 영어학습</dd>
+                                        <dd>글로벌 커뮤니케이션 프로젝트</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-detail">
+            <div class="container">
+                <h2>교수진 연구와 학습지원</h2>
+                <div class="detail-grid">
+                    <section class="detail-card">
+                        <h3>공동 연구 프로젝트</h3>
+                        <ul>
+                            <li>산학연 협력으로 AI 윤리 프레임워크 개발</li>
+                            <li>사회적 기업과 연계한 ESG 경영 사례 연구</li>
+                            <li>지자체와 함께하는 디지털 돌봄 서비스 실증</li>
+                        </ul>
+                    </section>
+                    <section class="detail-card">
+                        <h3>학생 맞춤 지도</h3>
+                        <ul>
+                            <li>AI 기반 학습 분석을 활용한 개인별 피드백</li>
+                            <li>학기별 교수-학생 멘토링 데이 운영</li>
+                            <li>국내외 캡스톤 경진대회 참가 지원</li>
+                        </ul>
+                    </section>
+                    <section class="detail-card">
+                        <h3>입학 문의</h3>
+                        <p>교수진과의 상담이 필요하시면 입학전형팀으로 연락주세요.</p>
+                        <ul>
+                            <li>전화: 010-5909-9320</li>
+                            <li>이메일: gtcccybercollege@gmail.com</li>
+                            <li>온라인 상담: <a href="support.html#coaching">상담 신청 바로가기</a></li>
+                        </ul>
+                    </section>
+                    <section class="detail-card">
+                        <h3>입학 문의</h3>
+                        <p>교수진과의 상담이 필요하시면 입학전형팀으로 연락주세요.</p>
+                        <ul>
+                            <li>전화: 010-5909-9320</li>
+                            <li>이메일: gtcccybercollege@gmail.com</li>
+                            <li>온라인 상담: <a href="support.html#coaching">상담 신청 바로가기</a></li>
+                        </ul>
+                   </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홈스쿨과정 | YJIS홈스쿨</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main>
+        <section class="department-hero">
+            <div class="container">
+                <div class="department-hero__layout">
+                    <div class="department-hero__summary">
+                        <span class="department-hero__label" aria-label="홈스쿨과정">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0110 10v2a8 8 0 01-8 8h-4a8 8 0 01-8-8v-2A10 10 0 0112 2zm0 2a8 8 0 00-8 8v2a6 6 0 006 6h4a6 6 0 006-6v-2a8 8 0 00-8-8zm0 3a5 5 0 015 5v1h-4v-1a1 1 0 10-2 0v1H7v-1a5 5 0 015-5z"/></svg>
+                            Complementary Medicine Track
+                        </span>
+                        <h1>홈스쿨</h1>
+                        <p>
+                            '홈스쿨(Homeschool)'은 '홈(Home)'과 '스쿨링(Schooling)'의 합성어로, 학교에 보내지 않고 가정에서 직접 교육을 하는 방식을 말합니다. 
+                            순화된 말로는 '재택교육'이라고도 부르며, 줄여서 '홈스쿨'이라고 흔히 말합니다.
+                        </p>
+                        <div class="department-meta">
+                            <span>교육영역: 초.중.고등학교</span>
+                            <span>주요대상: 단기학습원하는자</span>
+                            <span>학습형태: 온라인+집합 세미나</span>
+                        </div>
+                    </div>
+                </div>
+                <nav class="department-tabs" aria-label="보완의학 세부 메뉴">
+                    <div class="department-tabs__list" role="tablist">
+                        <a class="is-active" id="tab-focus" role="tab" aria-controls="focus" aria-selected="true" href="#focus">전공 핵심</a>
+                        <a id="tab-curriculum" role="tab" aria-controls="curriculum" aria-selected="false" tabindex="-1" href="#curriculum">교육 모듈</a>
+                        <a id="tab-lab" role="tab" aria-controls="lab" aria-selected="false" tabindex="-1" href="#lab">임상 랩</a>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <section id="focus" class="department-section" role="tabpanel" aria-labelledby="tab-focus" tabindex="0">
+            <div class="container department-layout department-layout--split">
+                <div>
+                    <h2>GTCC 홈스쿨링</h2>
+                    <p>
+                      GTCC 대학교 부설 학교법인 영지에서운영하는 홈스쿨링은 단기간에 초.중.고 등학교의 졸업장을 취득할수 있는 장점이 있습니다.
+                    </p>
+                </div>
+                <div class="department-cards">
+                    <article class="department-card">
+                        <h3>홈스쿨링장점</h3>
+                        <ul>
+                            <li>학생의잠재력 최대발휘</li>
+                            <li>가족관의 유대성확립</li>
+                            <li>사회적 압력에서 벗어남</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>홈스쿨링고려할점</h3>
+                        <ul>
+                            <li>사회성발달 어려움</li>
+                            <li>부모의 노력증가</li>
+                            <li>공교육 부재</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>홈스쿨링의 특징</h3>
+                        <ul>
+                            <li>자기주도학습</li>
+                            <li>단기졸업</li>
+                            <li>대안적교육방식</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="department-section" role="tabpanel" aria-labelledby="tab-curriculum" tabindex="0">
+            <div class="container department-layout">
+                <div>
+                    <h2>교육 모듈 구성</h2>
+                    <p>
+                        이론, 실험, 케이스 스터디가 통합된 교육 모듈을 통해 보완요법의 효과를 과학적으로 검증하고 임상에서 활용할 수 있도록 지도합니다.
+                        각 모듈은 실제 사례 분석과 팀 프로젝트를 포함하여 실천 역량을 강화합니다.
+                    </p>
+                </div>
+                <div class="department-cards">
+                    <article class="department-card">
+                        <h3>기초 이론 모듈</h3>
+                        <ul>
+                            <li>보완의학 개론</li>
+                            <li>기능성 소재 과학</li>
+                            <li>통합 영양학</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>실험 · 분석 모듈</h3>
+                        <ul>
+                            <li>천연물 분석 실습</li>
+                            <li>임상 적용 시뮬레이션</li>
+                            <li>치유 프로그램 설계</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>케이스 스터디 모듈</h3>
+                        <ul>
+                            <li>만성질환 맞춤 케어</li>
+                            <li>암 환자 보완요법 사례</li>
+                            <li>노화 예방 프로그램</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="lab" class="department-section" role="tabpanel" aria-labelledby="tab-lab" tabindex="0">
+            <div class="container department-layout department-layout--split">
+                <div>
+                    <h2>임상 랩 &amp; 협력 네트워크</h2>
+                    <p>
+                        보완의학 임상 랩은 병원, 한방·양방 융합 클리닉, 웰니스 센터와 협력하여 실제 환자 데이터를 바탕으로 치료 효과를 검증합니다.
+                        다학제 연구팀과의 공동 프로젝트를 통해 학술 및 산업 협력 기회를 확대합니다.
+                    </p>
+                </div>
+                <div class="career-grid">
+                    <div class="career-card">
+                        <strong>임상 협력</strong>
+                        <p>대학병원 통합의학센터, 한방병원과 공동 임상 운영</p>
+                    </div>
+                    <div class="career-card">
+                        <strong>산학 프로젝트</strong>
+                        <p>기능성 식품 기업과의 제품 개발, 근거 확보 연구</p>
+                    </div>
+                    <div class="career-card">
+                        <strong>전문 인력 양성</strong>
+                        <p>보완요법 코디네이터, 웰니스 컨설턴트, 교육 강사로 진출</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

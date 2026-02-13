@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>평생교육원 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+<main class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-category">평생교육원</span>
+            <h1>GTCC 평생교육원</h1>
+            <p>GTCC 사이버 캠퍼스의 평생교육원 입니다 .</p>
+        </div>
+    </section>
+    <section class="page-body">
+        <div class="container">
+        <article class="info-block">
+            <h2>GTCC평생교육원</h2>
+            <p class="lead">평생교육원의 프로그램으로 학점을 이수할수 있다.</p>
+            <p>GTCC 평생교육원의 수많은 프로그램으로 학점이수를 하고 조기 졸업가능합니다.</p>
+            <ul class="info-list">
+                <li>평생교육원의 모든 프로그램 학점인정</li>
+                <li>국가 및 민간자격증 학점인정</li>
+                <li>국제민간자격 자격취득및 학점인정</li>
+            </ul>
+        </article>
+        <aside class="info-aside">
+            <h3>자료 다운로드</h3>
+            <p class="info-aside__lead">평생교육원에서 운영중인 국제민간자격 프로그램.</p>
+            <a class="btn primary" href="media-kit.html#brand">2025 평생교육원 시간표</a>
+            <a class="btn ghost" href="press.html">국제 민간자격 리스트</a>
+        </aside>
+        </div>
+    </section>
+<section class="page-detail">
+    <div class="container">
+        <h2>GTCC 평생교육원 집중 교육시스템</h2>
+        <div class="detail-grid">
+            <section class="detail-card">
+                <h3>테솔(TESOL)과정</h3>
+                <p>영어가 모국어가 아닌 사람들에게 영어를 가르치는 교사 자격증.</p>
+                <ul>
+                    <li>음악테솔</li>
+                    <li>커피테솔</li>
+                    <li>미용테솔</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>영어집중교육 시스템</h3>
+                <p>듣기,읽기,말하기,쓰기등의 집중교육과 AI를통한 실전교육을 제공합니다.</p>
+                <ul>
+                    <li>듣기 . 앍기</li>
+                    <li>말하기 . 쓰기</li>
+                    <li>AI 친구하기</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+</main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

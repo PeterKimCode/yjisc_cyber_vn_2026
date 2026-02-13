@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대학생활 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <span class="badge">Campus Life</span>
+                    <h1>온라인과 오프라인을 잇는 캠퍼스 라이프</h1>
+                    <p>
+                        GTCC 사이버 캠퍼스 학생들은 어디서든 연결되는 학습 커뮤니티와 다양한 비교과 프로그램에 참여하며 성장합니다.
+                        온·오프라인이 결합된 활동으로 풍성한 대학생활을 만들어보세요.
+                    </p>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="floating-card">
+                        <strong>학생 커뮤니티</strong>
+                        <p>학습동아리 · 멘토링 매칭 </p>
+                        <a href="#community">프로그램 보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="section programs">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>주요 비교과 프로그램</h2>
+                    <p>학생 역량 강화를 위한 다양한 온라인/오프라인 활동을 제공합니다.</p>
+                </div>
+                <div class="program-grid">
+                    <article class="program-card">
+                        <h3>글로벌 버추얼 교환</h3>
+                        <p>해외 대학과 공동 프로젝트를 진행하며 국제 감각을 키웁니다.</p>
+                        <a href="#">참가 안내</a>
+                    </article>
+                    <article class="program-card">
+                        <h3>현장밀착형 스터디</h3>
+                        <p>실무 전문가와 함께하는 직무 맞춤형 스터디로 경력을 설계하세요.</p>
+                        <a href="#">참가 안내</a>
+                    </article>
+                    <article class="program-card">
+                        <h3>마이크로 디그리 챌린지</h3>
+                        <p>4주 집중 코스로 새로운 분야의 자격을 빠르게 취득할 수 있습니다.</p>
+                        <a href="#">참가 안내</a>
+                    </article>
+                    <article class="program-card">
+                        <h3>힐링 웰니스 프로그램</h3>
+                        <p>마음건강 상담, 홈 트레이닝, 명상 클래스 등 균형 잡힌 삶을 지원합니다.</p>
+                        <a href="#">참가 안내</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section about">
+            <div class="container split">
+                <div class="text">
+                    <h2>학생 경험 지원</h2>
+                    <p>
+                        학생 성공센터를 통해 학습 코칭, 진로 설계, 심리 상담 등 맞춤형 지원을 제공하며,
+                        다양한 온라인 이벤트와 오프라인 밋업으로 커뮤니티를 강화합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>전담 멘토와의 1:1 코칭 프로그램</li>
+                        <li>지역별 오프라인 네트워킹 데이</li>
+                        <li>재학생·졸업생 커뮤니티 플랫폼 운영</li>
+                    </ul>
+                    <a class="link" href="#event">다가오는 행사 일정 →</a>
+                </div>
+                <div class="highlight-card" role="img" aria-label="학생 모임">
+                    <div class="stat">
+                        <span class="number">12,500+</span>
+                        <span class="label">연간 참여 인원</span>
+                    </div>
+                    <p>학생 참여 프로그램에 연간 12,500명 이상이 참여하며 활발한 교류가 이루어집니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

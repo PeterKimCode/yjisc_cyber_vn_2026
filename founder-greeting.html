@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학습관장인사말 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+    <main class="content-page">
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-category">학습관장</span>
+                <h1>인사말</h1>
+                <p>학습관장님이 전하는 교육 철학과 미래 비전을 확인해 보세요.</p>
+            </div>
+        </section>
+        <section class="page-body">
+            <div class="container container--profile">
+                <div class="profile-layout">
+                    <aside class="profile-card" aria-label="학습관장 소개">
+                        <figure class="profile-card__photo">
+                            <img src="assets/picture/김종주 교수.jpg" />
+                        </figure>
+                        <div class="profile-card__body">
+                            <p class="profile-card__role">학습관장</p>
+                            <p class="profile-card__name">김 종주 박사</p>
+                            <p class="profile-card__quote">“미래 교육의 중심은 언제나 학생이어야 합니다.”</p>
+                        </div>
+                        <div class="profile-card__meta">
+                            <dl>
+                                <div>
+                                    <dt>전공</dt>
+                                    <dd>경영학 박사</dd>
+                                    <dd>교육학 박사</dd>
+                                </div>
+                                <div>
+                                    <dt>주요 이력</dt>
+                                    <dd> 웅지세무대학 부총장</dd>
+                                    <dd>GTCC 사이버 대학 한국분교 설립 추진위원장</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </aside>
+                    <article class="profile-content">
+                        <h2>GTCC대학교 [location-지역] 학습관을 찾아주신 여러분을 진심으로 환영합니다.</h2>
+                        <p class="lead">반갑습니다!
+                        <p>미래를 향한 끊임없는 도전과 성장을 꿈꾸는 여러분과 함께하게 되어 매우 기쁩니다. GTCC대학교 [location-지역] 학습관은 단순한 지식 전달을 넘어, 급변하는
+                            시대에 필요한 실질적인 역량과 창의적인 통찰력을 키울 수 있는 배움의 장이 될 것입니다.</p>
+                        <p>우리 학습관은 여러분의 꿈을 현실로 만들 수 있도록 최고의 교육 환경과 전문적인 지원을 아끼지 않겠습니다. 여러분이 각자의 분야에서 뛰어난 전문가로 성장하고, 더
+                            나아가 사회에 긍정적인 영향을 미치는 리더가 될 수 있도록 최선을 다하겠습니다.</p>
+                        <p>배움에 대한 열정으로 가득한 여러분의 새로운 시작을 응원하며, GTCC대학교 [location-지역] 학습관에서 소중한 결실을 맺기를 바랍니다.</p>
+                        <p>GTCC대학교 [location-지역] 학습관장.</p>
+                        <p>김종주 박사 드림</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="page-detail">
+            <div class="container container--profile">
+                <h2>학습관장이 전하는 핵심 메시지</h2>
+                <div class="detail-grid">
+                    <section class="detail-card">
+                        <h3>미래형 학습 생태계 구축</h3>
+                        <p>GTCC는 디지털 기술과 인간 중심 설계를 결합한 학습 생태계를 조성해 학생들이 스스로 학습 목표를 설계하고 실천할 수 있도록 지원합니다.</p>
+                        <ul>
+                            <li>AI 기반 학습 분석과 맞춤형 튜터링 제공</li>
+                            <li>학생 주도 프로젝트형 수업 확대</li>
+                            <li>개인화된 학습 경로 설계 플랫폼 운영</li>
+                        </ul>
+                    </section>
+                    <section class="detail-card">
+                        <h3>지역과 함께하는 사회적 책임</h3>
+                        <p>설립자는 교육 기관이 지역사회와 긴밀히 협력해야 한다는 믿음을 가지고 있습니다. GTCC는 지식 나눔과 사회공헌 활동을 지속적으로 확대하고 있습니다.</p>
+                        <ul>
+                            <li>지역 기관과 공동 교육 프로그램 운영</li>
+                            <li>재능 기부 및 멘토링 네트워크 확대</li>
+                            <li>지속 가능한 발전 목표(SDGs) 연계 프로젝트 추진</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

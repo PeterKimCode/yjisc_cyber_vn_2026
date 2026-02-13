@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학점인정제도 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+<main class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-category">학점인정제도</span>
+            <h1>학점인정제도</h1>
+            <p>학점인정등에관한법률에 근거하여 학교밖에서 이루어 지는 교육지원 서비스를 소개합니다.</p>
+        </div>
+    </section>
+    <section class="page-body">
+        <div class="container">
+        <article class="info-block">
+            <h2>학점인정제도</h2>
+            <p class="lead"> 평생학습 사회를 실현하기 위한 제도로, 고등학교 졸업자나 동등 학력 
+                소지자 누구나 이용 가능하며, 온라인 학습, 자격증,등으로 학점을 취득할 수 있습니다.</p>
+            <p>민간자격 커리큘럼을 통하여 학점을 이수할수 있습니다.</p>
+            <ul class="info-list">
+                <li>교사 대상 온라인 진로 컨설팅</li>
+                <li>고교-대학 연계 비교과 프로그램</li>
+                <li>입시 정보 공유 플랫폼 운영</li>
+            </ul>
+        </article>
+        <aside class="info-aside">
+            <h3>협력 신청</h3>
+            <p class="info-aside__lead">학교 관계자는 전용 채널을 통해 상담 및 프로그램을 신청할 수 있습니다.</p>
+            <ul class="contact-list">
+                <li>전화<span>010-5909-9320</span></li>
+                <li>이메일<span>yjisc@naver.com</span></li>
+            </ul>
+            <a class="btn primary" href="https://forms.gle/example" target="_blank" rel="noopener noreferrer">학점인정신청</a>
+            <a class="btn ghost" href="admissions-bulletin.html">자료 요청</a>
+        </aside>
+        </div>
+    </section>
+<section class="page-detail">
+    <div class="container">
+        <h2>학점인정제도란?</h2>
+        <div class="detail-grid">
+            <section class="detail-card">
+                <h3>주요 특징 및 장점</h3>
+                <p>학점인정제도의 편리함과 장점을 전문 상담사가 온라인·오프라인 상담을 제공합니다.</p>
+                <ul>
+                    <li>다양한 학습방식</li>
+                    <li>학교수업외 평가인정학습과정</li>
+                    <li>유연한 학위취득</li>
+                    <li>학년제가 아닌 학점제운영</li>
+                    <li>학습,취업 경쟁력 강화</li>
+                    <li>자율학습계획</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>학점취득방법</h3>
+                <p>열려있는 학습과정 혁신 세미나와 디지털 수업 역량 강화 과정을 운영합니다.</p>
+                <ul>
+                    <li>평가인정학습과정</li>
+                    <li>국가자격증</li>
+                    <li>등록된민간자격증</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>이용대상</h3>
+                <p>평생교육으로 누구나 어디서나 신청 학습 가능합니다.</p>
+                <ul>
+                    <li>고등학교 졸업자나 이와동등학력 소지자</li>
+                    <li>새로운 분야를 공부하고자 하는자</li>
+                    <li>자격증 취득을 목표로 하는자</li>
+                    <li>중도 포기한 학업을 이어가고 싶은사람</li>
+                    <li>대학원진학을 원하는 자로 학사학위필요자</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>신청절차</h3>
+                <p>간편한 인정 절차와 폭넓은 학습으로 전세계 어디서든 가능합니다.</p>
+                <ul>
+                    <li>학습자등록</li>
+                    <li>학점인정신청</li>
+                    <li>학위신청</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+</main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

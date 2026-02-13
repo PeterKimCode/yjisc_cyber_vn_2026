@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전화번호 안내 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+<main class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-category">대학정보</span>
+            <h1>전화번호 안내</h1>
+            <p>주요 부서의 연락처와 상담 채널을 한눈에 제공합니다.</p>
+        </div>
+    </section>
+    <section class="page-body">
+        <div class="container">
+        <article class="info-block">
+            <h2>대표 연락처</h2>
+            <p class="lead">필요한 업무에 따라 빠르게 문의할 수 있도록 대표 연락처를 안내합니다.</p>
+            <p>학사, 입학, 학생지원, 산학협력 등 부서별 연락처를 정리했습니다.</p>
+            <ul class="info-list">
+                <li>한국대표번호 010-5909-9320 (평일 09:00~18:00)</li>
+                <li>야간·주말 상담 챗봇 24시간 운영</li>
+                <li>장애인·원거리 학습자를 위한 원격 상담 지원</li>
+            </ul>
+        </article>
+        <aside class="info-aside">
+            <h3>빠른 연결</h3>
+            <p class="info-aside__lead">자주 찾는 서비스를 바로 이용해 보세요.</p>
+            <div class="resource-grid">
+                <a href="support.html#coaching">학습 상담<span></a>
+                <a href="admissions.html">입학 문의<span></a>
+                <a href="support.html#guide">장학/등록<span></a>
+            </div>
+        </aside>
+        </div>
+    </section>
+<section class="page-detail">
+    <div class="container">
+        <h2>부서별 연락처</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>부서</th>
+                    <th>업무 내용</th>
+                    <th>전화 / 이메일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>입학홍보팀</th>
+                    <td>입학 상담, 모집 설명회</td>
+                    <td>010-5909-9320 /gtcccybercollege@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>교무처</th>
+                    <td>수강신청, 성적, 학적 관리</td>
+                    <td>010-5909-9320 / gtcccybercollege@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>학생서비스처</th>
+                    <td>장학, 복지, 상담 프로그램</td>
+                   <td>010-5909-9320 /gtcccybercollege@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>산학협력단</th>
+                    <td>현장실습, 기업협력, 산학 프로젝트</td>
+                    <td>010-5909-9320 /gtcccybercollege@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>IT지원센터</th>
+                    <td>학습 시스템 오류, 계정 관리</td>
+                    <td>010-5909-9320 /gtcccybercollege@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

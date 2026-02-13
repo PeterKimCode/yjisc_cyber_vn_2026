@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학칙 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <span class="badge">Academic Regulations</span>
+                    <h1>국제민간자격</h1>
+                    <p>
+                        GTCC 사이버대학의 학점인정은 국제민간자격으로 부터 시작할수 있습니다 .
+                    </p>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="floating-card">
+                        <strong>핵심 가치</strong>
+                        <p>학점 · 전문성 · 공동체</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>학점인정</h2>
+                    <p>학칙의 목적과 적용 범위, 구성원에 대한 기본 규정을 명시합니다.</p>
+                </div>
+                <div class="program-grid">
+                    <article class="program-card">
+                        <h3>국내민간자격</h3>
+                        <p>국내의 공인 및 기타 민간자격증을 Curriculum 하여 총장의 재량으로 교육부의 허가후 학점 인정을 받을수 있습니다.</p>
+                    </article>
+                    <article class="program-card">
+                        <h3>국제민간자격</h3>
+                        <p>국제의 공인 및 기타 민간자격증을 Curriculum 하여 총장의 재량으로 교육부의 허가후 학점 인정을 받을수 있습니다.</p>
+                    </article>
+                    <article class="program-card">
+                        <h3>기타 자격증 </h3>
+                        <p>기타의 국,내외 자격증을 Curriculum 하여 총장의 재량으로 교육부의 허가후 학점 인정을 받을수 있습니다.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <div class="container split">
+                <div>
+                    <h2>학점인정제의목적</h2>
+                    <p>학교 밖에서 이루어진 다양한 학습 경험이나 자격을 대학 교육과 동등하게 인정해 학점을 부여하는 제도.</p>
+                    <ul class="feature-list">
+                        <li>평생학습사회를 구현하기위해서.</li>
+                        <li>학습이력을 활용해 학위를 취득할 기회를 주기위해.</li>
+                        <li>학교를 다니지 않고도 학위를 받을수 있는 제도의 법안.</li>
+                    </ul>
+                </div>
+                <aside class="highlight-card" role="img" aria-label="입학 등록 안내">
+                    <div class="stat">
+                        <span class="number">100%</span>
+                        <span class="label">온라인 전형</span>
+                    </div>
+                    <p>모든 입학 전형과 등록 절차는 비대면 시스템으로 진행됩니다.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split">
+                <div>
+                    <h2>학점인정대상</h2>
+                    <p>학점인정은 학업성적 평가의 기준을 명확히 규정하여 학점을 인정합니다.</p>
+                    <ul class="feature-list">
+                        <li>혼자공부해서 시험에 합격하는 독학사제도.</li>
+                        <li>국가 무형 문화재 이수자.</li>
+                        <li>산업기사,기사등국가 자격증이나 공인민간자격소유자.</li>
+                        <li>중요무형문화재 전수자.</li>
+                        <li>대학총장재량으로 총장이평가인증한교육기관에서 이수한 자격소유자.</li>
+                    </ul>
+                </div>
+                <div class="support-cta">
+                    <h3>학점인정평가</h3>
+                    <p>모든 학습과정 Curriculum 화 되어 최소 10강의 녹화 강의가 첨부되어  학교 관계자에게 제출 심의평가후 학점인정이됨.</p>
+                    <a class="btn ghost" href="course-enrollment-withdrawal.html">수업/평가 안내 보기</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <div class="container split">
+                <div>
+                    <h2>제4장 학생 생활과 징계</h2>
+                    <p>학생의 권리와 의무, 학생 활동, 징계 기준을 통해 건강한 대학 문화를 조성합니다.</p>
+                    <ul class="feature-list">
+                        <li>학생은 학사 일정 준수, 타인 존중, 정보 보안 등 기본 의무를 다해야 합니다.</li>
+                        <li>학생회 및 동아리 활동은 학칙에 따라 지원되며 필요한 경우 사전 승인을 받습니다.</li>
+                        <li>학칙 위반 시 징계위원회의 심의를 거쳐 경고, 정학, 제적 등의 조치를 취합니다.</li>
+                    </ul>
+                </div>
+                <div class="highlight-card" role="img" aria-label="학생 공동체">
+                    <div class="stat">
+                        <span class="number">24/7</span>
+                        <span class="label">학생 지원</span>
+                    </div>
+                    <p>학생 상담센터가 생활 전반의 어려움을 함께 해결합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>제5장 학위 수여</h2>
+                    <p>졸업 요건을 충족한 학생에게 학위 수여 절차를 명시합니다.</p>
+                </div>
+                <div class="program-grid">
+                    <article class="program-card">
+                        <h3>졸업 학점</h3>
+                        <p>전공 및 교양 이수 학점을 포함하여 학위 유형별 졸업 최소 학점을 규정합니다.</p>
+                    </article>
+                    <article class="program-card">
+                        <h3>성적 기준</h3>
+                        <p>졸업평점 2.0 이상을 유지해야 하며, 학과가 정한 추가 요건이 있을 수 있습니다.</p>
+                    </article>
+                    <article class="program-card">
+                        <h3>졸업 절차</h3>
+                        <p>졸업사정, 학위수여식, 졸업증명서 발급 등의 절차를 안내합니다.</p>
+                        <a href="graduation-guide.html">졸업 안내 자세히 보기</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

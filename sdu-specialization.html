@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GTCC 대학특성화 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+<main class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-category">비전</span>
+            <h1>GTCC 대학특성화</h1>
+            <p>GTCC 사이버 캠퍼스만의 특성화 전략과 차별화된 지원 체계를 소개합니다.</p>
+        </div>
+    </section>
+    <section class="page-body">
+        <div class="container">
+        <article class="info-block">
+            <h2>디지털 전환 특화 전략</h2>
+            <p class="lead">대학 특성화 전략은 4차 산업혁명 핵심 역량을 갖춘 인재 양성과 실무 중심 교육을 목표로 합니다.</p>
+            <p>캠퍼스는 데이터·AI, 디지털 비즈니스, 휴먼서비스, 문화예술 등 4대 전략 분야를 중심으로 학부 및 비교과 과정을 설계했습니다.</p>
+            <ul class="info-list">
+                <li>산업 맞춤형 학부 체계 및 전공 심화 과정</li>
+                <li>현업 전문가와의 산학 협력 프로젝트 운영</li>
+                <li>재학생 맞춤 지원: 코칭, 장학, 커리어 브리핑</li>
+            </ul>
+        </article>
+        <aside class="info-aside">
+            <h3>특성화 센터</h3>
+            <p class="info-aside__lead">각 특성화 분야별 전담 센터가 운영되며 교육과 연구, 산업 협력 프로그램을 조율합니다.</p>
+            <ul class="contact-list">
+                <li>AI·데이터 센터<span>010-5909-9320</span></li>
+                <li>디지털 비즈니스 센터<span>010-5909-9320</span></li>
+                <li>휴먼서비스 센터<span>010-5909-9320</span></li>
+            </ul>
+            <a class="btn primary" href="programs.html#departments">전공 한눈에 보기</a>
+            <a class="btn ghost" href="convergence.html">융합 과정 탐색</a>
+        </aside>
+        </div>
+    </section>
+<section class="page-detail">
+    <div class="container">
+        <h2>특성화 프로그램</h2>
+        <div class="detail-grid">
+            <section class="detail-card">
+                <h3>AI · 데이터 사이언스</h3>
+                <p>머신러닝, 데이터 시각화, 클라우드 엔지니어링을 실습 중심으로 학습합니다.</p>
+                <ul>
+                    <li>기업 협력형 데이터 분석 프로젝트</li>
+                    <li>AI 윤리 및 책임 있는 기술 활용 교육</li>
+                    <li>전문가 멘토와의 학기별 리서치 그룹 운영</li>
+                </ul>
+            </section>
+            <section class="detail-card">
+                <h3>디지털 비즈니스 & 휴먼서비스</h3>
+                <p>디지털 마케팅, 창업 전략, 상담·복지 서비스 등 사람과 비즈니스를 연결하는 융합 역량을 강화합니다.</p>
+                <ul>
+                    <li>실전 창업 트랙 및 글로벌 인턴십</li>
+                    <li>상담·복지 현장 실습과 전문 자격 지원</li>
+                    <li>문화예술 기반 콘텐츠 크리에이티브 스튜디오</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+</main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

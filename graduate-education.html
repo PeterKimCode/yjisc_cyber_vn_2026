@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>교육대학원 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main>
+        <section class="department-hero">
+            <div class="container">
+                <div class="department-hero__layout">
+                    <div class="department-hero__summary">
+                        <span class="department-hero__label" aria-label="대학원 과정">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zm0 6.74l7.53-3.77L12 4.2 4.47 5.97 12 9.74zM21 10.5v3.75c0 2.5-4.03 6.25-9 6.25s-9-3.75-9-6.25V10.5l9 4.5 9-4.5z"/></svg>
+                            Graduate Program
+                        </span>
+                        <h1>교육대학원</h1>
+                        <p>
+                            교육대학원은 학교와 평생교육 현장에서 필요한 전문 역량을 강화하여 미래형 교육 리더를 양성합니다.
+                            교육 연구와 수업 혁신, 교육행정 역량을 통합적으로 개발합니다.
+                        </p>
+                        <div class="department-meta">
+                            <span>학위과정: 석사(M.Ed) · 교육학 박사(Ed.D.)</span>
+                            <span>소속: 대학원</span>
+                            <span>표준수업연한: 2~4년</span>
+                        </div>
+                    </div>
+                </div>
+                <nav class="department-tabs" aria-label="교육대학원 메뉴">
+                    <div class="department-tabs__list" role="tablist">
+                        <a class="is-active" id="tab-overview" role="tab" aria-controls="overview" aria-selected="true" href="#overview">학과소개</a>
+                        <a id="tab-curriculum" role="tab" aria-controls="curriculum" aria-selected="false" tabindex="-1" href="#curriculum">교과과정</a>
+                        <a id="tab-career" role="tab" aria-controls="career" aria-selected="false" tabindex="-1" href="#career">진로 및 진출</a>
+                        <a id="tab-support" role="tab" aria-controls="support" aria-selected="false" tabindex="-1" href="#support">학생지원</a>
+                        <a id="tab-faculty" role="tab" aria-controls="faculty" aria-selected="false" tabindex="-1" href="#faculty">교수진</a>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <section id="overview" class="department-section" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+            <div class="container department-layout department-layout--split">
+                <div>
+                    <h2>대학원 소개</h2>
+                    <p>
+                        교육학 이론과 실제를 심층 탐구하고, 에듀테크, 평가, 교육행정 등 다양한 트랙을 운영합니다.
+                        현장 문제 해결형 연구와 교수학습 혁신 프로젝트를 통해 전문성을 높입니다.
+                    </p>
+                    <div class="department-cta">
+                        <a class="btn primary" href="admissions.html">입학 상담 신청</a>
+                        <a class="btn ghost" href="support.html#guide">장학 · 등록 안내</a>
+                    </div>
+                </div>
+                <div>
+                    <ul class="department-list">
+                        <li>
+                            <h3 class="department-list__title">교육과정 설계 연구</h3>
+                            <p class="department-list__subtitle">Curriculum Design Research</p>
+                            <p class="department-list__body">차세대 교육과정 개발, 수업 설계 이론을 토대로 학습자 중심 수업 혁신을 추진합니다.</p>
+                        </li>
+                        <li>
+                            <h3 class="department-list__title">에듀테크와 데이터 분석</h3>
+                            <p class="department-list__subtitle">EdTech & Learning Analytics</p>
+                            <p class="department-list__body">AI 기반 학습분석, 온라인 학습환경 설계, 교육 데이터 활용법을 학습합니다.</p>
+                        </li>
+                        <li>
+                            <h3 class="department-list__title">교육 리더십 &amp; 정책</h3>
+                            <p class="department-list__subtitle">Educational Leadership & Policy</p>
+                            <p class="department-list__body">교육 행정, 정책 분석, 조직 변화 관리를 통해 학교와 지역사회의 교육 혁신을 이끕니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="department-section" role="tabpanel" aria-labelledby="tab-curriculum" tabindex="0">
+            <div class="container department-layout">
+                <div>
+                    <h2>교과과정 안내</h2>
+                    <p>
+                        교육학 이론, 연구방법론, 전공별 심화, 현장 기반 프로젝트로 구성됩니다.
+                        액션리서치와 캡스톤 프로젝트를 통해 실무 적용 능력을 강화합니다.
+                    </p>
+                </div>
+                <div class="department-cards">
+                    <article class="department-card">
+                        <h3>공통 필수</h3>
+                        <ul>
+                            <li>교육철학 및 이론</li>
+                            <li>교육연구 방법론</li>
+                            <li>학습자 분석과 평가</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>트랙 심화</h3>
+                        <ul>
+                            <li>디지털 교수학습 전략</li>
+                            <li>교육행정과 리더십</li>
+                            <li>특수/평생교육 프로젝트</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>현장 적용</h3>
+                        <ul>
+                            <li>교육기관 액션리서치</li>
+                            <li>수업 혁신 캡스톤</li>
+                            <li>국내외 교육연수</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="department-section" role="tabpanel" aria-labelledby="tab-career" tabindex="0">
+            <div class="container department-layout">
+                <h2>진로 및 진출 분야</h2>
+                <p>
+                    학교 관리자, 교육과정 전문가, 에듀테크 기획자, 교육정책 연구원, 평생교육기관 운영자 등으로 진출합니다.
+                    교육학 박사과정, 국제 교육 관련 연구기관 등으로의 진학이 가능합니다.
+                </p>
+                <div class="career-grid">
+                    <div class="career-card">
+                        <strong>학교 현장</strong>
+                        <p>교감·교장 등 교육 리더, 수업 혁신 코디네이터</p>
+                    </div>
+                    <div class="career-card">
+                        <strong>교육 산업</strong>
+                        <p>에듀테크 기획자, 콘텐츠 개발자, 교육컨설턴트</p>
+                    </div>
+                    <div class="career-card">
+                        <strong>연구/정책</strong>
+                        <p>교육정책 연구원, 국제교육 NGO, 교육행정 박사과정</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="department-section" role="tabpanel" aria-labelledby="tab-support" tabindex="0">
+            <div class="container department-layout department-layout--split">
+                <div>
+                    <h2>학생 지원 프로그램</h2>
+                    <p>
+                        현장 멘토링, 수업코칭 랩, 글로벌 교육연수 프로그램을 운영합니다.
+                        연구장학금과 교육 혁신 펠로우십으로 전문성 향상을 지원합니다.
+                    </p>
+                </div>
+                <div class="department-cards">
+                    <article class="department-card">
+                        <h3>학술/현장 지원</h3>
+                        <ul>
+                            <li>논문 설계 워크숍</li>
+                            <li>수업컨설팅 &amp; 코칭</li>
+                            <li>국제 교육학회 참가 지원</li>
+                        </ul>
+                    </article>
+                    <article class="department-card">
+                        <h3>교육 네트워크</h3>
+                        <ul>
+                            <li>교육 리더십 포럼</li>
+                            <li>수업혁신 커뮤니티</li>
+                            <li>글로벌 교육 교류 프로젝트</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="faculty" class="department-section" role="tabpanel" aria-labelledby="tab-faculty" tabindex="0">
+            <div class="container">
+                <div class="department-hero__faculty">
+                    <h2>교수진</h2>
+                    <p class="department-hero__faculty-intro">에듀테크와 교육리더십 전문가들이 미래형 수업 설계와 조직 혁신 연구를 이끕니다.</p>
+                    <div class="department-hero__faculty-list">
+                        <article class="faculty-card">
+                            <figure class="faculty-card__photo">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTYwIj4KICA8cmVjdCB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2MCIgcng9IjMyIiBmaWxsPSIjZWFmMGZmIi8+CiAgPGNpcmNsZSBjeD0iODAiIGN5PSI2MCIgcj0iMzYiIGZpbGw9IiMzYTZmZjciLz4KICA8cGF0aCBkPSJNODAgOTZjLTMyIDAtNTggMjAtNTggNDZoMTE2YzAtMjYtMjYtNDYtNTgtNDZ6IiBmaWxsPSIjMWYyYTQ0IiBvcGFjaXR5PSIwLjE2Ii8+CiAgPHBhdGggZD0iTTgwIDk2Yy0yNCAwLTQ0IDE0LTUxIDM0aDEwMmMtNy0yMC0yNy0zNC01MS0zNHoiIGZpbGw9IiMzYTZmZjciIG9wYWNpdHk9IjAuMjgiLz4KPC9zdmc+Cg==" alt="김소연 교수의 프로필 사진" loading="lazy" />
+                            </figure>
+                            <div class="faculty-card__body">
+                                <p class="faculty-card__name">김소연 교수</p>
+                                <p class="faculty-card__role">미래교육</p>
+                                <p class="faculty-card__focus">에듀테크 기반 수업 설계와 학습 분석을 활용한 맞춤형 교육 모델을 연구합니다.</p>
+                            </div>
+                        </article>
+                        <article class="faculty-card">
+                            <figure class="faculty-card__photo">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTYwIj4KICA8cmVjdCB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2MCIgcng9IjMyIiBmaWxsPSIjZmZlY2U4Ii8+CiAgPGNpcmNsZSBjeD0iODAiIGN5PSI2MCIgcj0iMzYiIGZpbGw9IiNmZjdiNWEiLz4KICA8cGF0aCBkPSJNODAgOTZjLTMyIDAtNTggMjAtNTggNDZoMTE2YzAtMjYtMjYtNDYtNTgtNDZ6IiBmaWxsPSIjOGIzMjFmIiBvcGFjaXR5PSIwLjE4Ii8+CiAgPHBhdGggZD0iTTgwIDk2Yy0yNCAwLTQ0IDE0LTUxIDM0aDEwMmMtNy0yMC0yNy0zNC01MS0zNHoiIGZpbGw9IiNmZjdiNWEiIG9wYWNpdHk9IjAuMjgiLz4KPC9zdmc+Cg==" alt="박지환 교수의 프로필 사진" loading="lazy" />
+                            </figure>
+                            <div class="faculty-card__body">
+                                <p class="faculty-card__name">박지환 교수</p>
+                                <p class="faculty-card__role">교육리더십</p>
+                                <p class="faculty-card__focus">학교 조직 혁신과 코칭 리더십 프로그램을 통해 현장 중심의 변화를 지원합니다.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

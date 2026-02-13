@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>국제민간자격과정 | GTCC</title>
+    <link rel="icon" type="image/png" href="assets/icons/gtcc.png" />
+
+    <!-- Preload Fonts -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        },
+                        colors: {
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                            'glass-border': 'rgba(255, 255, 255, 0.1)',
+                            primary: '#3b82f6',
+                            'primary-dark': '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+        window.tailwindConfigured = true; // Prevent includes.js from re-initializing
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/theme-overrides.css">
+
+    <!-- Custom Styles for Specific Components that rely on legacy CSS or complex animations -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        /* Modern Utilities Overrides */
+        /* Body styles moved to Tailwind utilities on the body tag */
+
+        /* Bento cards adaptivity via standard CSS variables or Tailwind classes in HTML */
+        .bento-card {
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-800 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div data-include="assets/partials/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <span class="badge">국제민간자격</span>
+                    <h1>국제민간자격과정</h1>
+                    <p>
+                        국내민간자격증을 국제민간자격증으로 교체하수 있습니다.  그리고 전세계 어디서나  핸드폰으로 자격증을  확인하고 증명서를 발급받을수 있습니다 .
+                    </p>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="section programs">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>왜 국제민간자격증 이어야 하나?</h2>
+                    <p>이론과 실습이 결합된 프로젝트 중심 교육으로 전문성을 강화합니다.</p>
+                </div>
+                <div class="program-grid">
+                    <article class="program-card">
+                        <h3>발급주체</h3>
+                        <p>특정 국가의 정부가 아닌, 국제적인 전문 협회, 산업별 기구, 다국적 IT 기업, 표준화 기구 등의 민간 기관이 만듭니다.</p>
+                        <a href="http://gtcc.edu.ph">세부 과목 보기</a>
+                    </article>
+                    <article class="program-card">
+                        <h3>통용성(국제적 인정)</h3>
+                        <p>국경을 넘어 해당 분야의 직무 수행 능력을 표준화된 기준으로 평가하고 인증하기 때문에, 자격증 취득자가 여러 국가에서 경력을 쌓거나 취업할 때 유리하게 작용할 수 있습니다.</p>
+                        <a href="http://gtcc.edu.ph">세부 과목 보기</a>
+                    </article>
+                    <article class="program-card">
+                        <h3>신뢰성 및 공신력</h3>
+                        <p>해당 분야의 글로벌 산업 표준을 반영하는 경우가 많아, 산업계에서는 매우 높은 신뢰도와 공신력을 갖는 경우가 많습니다.</p>
+                        <a href="http://gtcc.edu.ph">세부 과목 보기</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section about">
+            <div class="container split">
+                <div class="text">
+                    <h2>국제민간자격 학점인정제도</h2>
+                    <p>
+                        GTCC대학은 국제민간자격협회와  MOU를 맺고있어 국제규격교육에 해당하는 모든 국제민간자격을 교양과목 학점으로 인정받을수 있습니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>선수 학습 평가(Prior Learning Assessment)</li>
+                        <li>경력 학점(Credit for Prior Experience)"</li>
+                        <li>교육 내용에 대한 상세한 자료(Syllabus)를 제출</li>
+                    </ul>
+                </div>
+                <div class="highlight-card" role="img" aria-label="온라인 공동 프로젝트"> 
+                    <div class="stat">
+                        <span class="number">최대80학점</span>
+                        <span class="label">교양과목으로 학점인정</span>
+                    </div>
+                    <p>GTCC 대학의 학생들은 국제민간자격증 학점인정 제도를 통하여  국제민간 자격증과 학위를 동시에 취득할수 있는 폭넓은 기회를 취득할수 있습니다. </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-include="assets/partials/footer.html"></div>
+
+    <script src="assets/js/includes.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* =========================================
+   GTCC Theme Bundle (Modern)
+   ========================================= */
+
+/* Base Theme & Variables */
+@import "modules/theme.css";
+
+/* Component Modules */
+@import "modules/header.css";
+/* Navigation & Header */
+@import "modules/hero-slider.css";
+/* Main Hero Slider */
+@import "modules/about-slider.css";
+/* About Section Slider */
+@import "modules/video-slider.css";
+/* Youtube Video Slider */
+@import "modules/cards.css";
+/* Profile & Bento Cards */
+@import "modules/footer.css";
+/* Footer Styles */
+
+/* Note: 'styles.css' is the legacy stylesheet used by subpages. 
+   Do not delete it unless all pages are migrated to Tailwind. */
